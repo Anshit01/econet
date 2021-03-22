@@ -7,5 +7,5 @@ from econet import settings
 
 
 urlpatterns = [
-    # path('', views.index_handler, name='index'),
+    path('', views.taskHome),
 ]
