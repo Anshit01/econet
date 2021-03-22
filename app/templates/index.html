@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>findMyHospital</title>
+{% endblock %}
+
+{% block body_block %}
+    <div class="hero-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1 class="hero-section-heading">Find my hospital</h1>
+                    <p class="hero-section-text">
+                        Your blood group at your nearest hospital
+                    </p>
+                    <p class="hero-section-recruiter">Find required blood group at Find My Hospital. It also 
+                        provides other major information like timings, doctor specialisation, number of beds, 
+                        OT, hosiptal's contact details and ambulance </p>
+                    <div class="btn-group">
+                        
+                        {% if user.is_authenticated %}
+                        <a href="/dashboard" class="hero-section-btn btn-filled">Update Data</a>  
+                        {% else %}
+                        <a href="/register" class="hero-section-btn btn-filled">Join Us</a>  
+                        <a href="/login" class="hero-section-btn btn-hollow">Login</a>
+                        {% endif %}
+                    </div>    
+                     
+                </div>
+                <div class="col-md-5 doctor-image">
+                    <img src="{% static 'images/hero.png' %}" class="hero-section-img mt-xs-5 mt-sm-0 mx-auto" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hospital-list-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="filters">
+                        <form class="form-inline" method="GET">
+                            <input class="location-filter" name="location" type="text"
+                                value="{% if location != '' %}{{location}}{% endif %}"
+                                placeholder="Filter by Location">
+                            <input class="location-btn" type="submit" value="Search">
+                        </form>
+
+                        <div class="bg-filter-container">
+                            <span>Filter by Blood Group Availability: </span>
+                            <form class="form-inline" method="GET">
+                                <select class="bg-filter" name="bg">
+                                    <option value="">select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="B+">B+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="O+">O+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for hospital in hospitals %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a href="/hospital/{{hospital.id}}">
+                            <div class="hospital-card mx-5 mx-md-1">
+                                <div class="card-head">
+                                    <p class="card-title">
+                                        {{hospital.name}}
+                                    </p>
+                                    <p class="card-time">
+                                        {{hospital.location}}
+                                    </p>
+                                    <!-- <p class="card-time">
+                                        {{hospital.speciality}}
+                                    </p> -->
+                                </div>
+                                <div class="card-foot">
+                                    <div class="card-tags">
+                                        <span class="badge badge-pill badge-secondary card-tag">Beds: {{hospital.beds}}</span>
+                                        <span class="badge badge-pill badge-secondary card-tag">OT: {{hospital.ot}}</span>
+                                    </div>
+                                    <div class="card-description">
+                                        <p class="contact">
+                                            Contact: {{hospital.contact_no}}
+                                        </p>
+                                        <p class="timing">
+                                            Open: {{hospital.timing}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+   
+    
+  
+
+{% endblock %}
