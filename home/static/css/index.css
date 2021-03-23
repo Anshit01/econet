@@ -3,6 +3,14 @@
 body{
     margin: 0%;
 }
+.landing{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100000;
+}
 
 .hero-text{
     position: absolute;
@@ -28,9 +36,9 @@ body{
 }
 
 .welcome-text{
-    font-size: 20px;
-    color: #EAF1EA;
-    margin: 0%;
+    font-size: 18px;
+    color: #cce2cc;
+    margin: 1%;
 }
 
 .btn-explore{
@@ -42,24 +50,30 @@ body{
     padding: 10px 35px;
     border-radius: 2px;
     cursor: pointer;
-    margin-left: 40%;
+    position: absolute;
     margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media only screen and (max-width: 600px) {
     .hero-text {
         position: absolute;
         top: 50%;
-        left: 10%;
+        left: 13%;
         transform: translate(-10%, -50%);
     }
     .welcome-head{
-        font-size: 32px;
+        font-size: 39px;
+        margin-bottom: 20px;
     }
     .welcome-text{
         font-size: 16px;
         color: #fdf0e8;
         font-weight: 400;
-
+    }
+    .btn-explore{
+        font-size: 18px;
+        padding: 10px 25px;
     }
 }
