@@ -2,6 +2,7 @@
 
 body{
     margin: 0%;
+    background-color: rgb(238, 253, 234);
 }
 .landing{
     position: fixed;
@@ -55,12 +56,74 @@ body{
     transform: translateX(-50%);
 }
 
+.create-span{
+    margin-top: 20px;
+}
+
 .btn-new-post{
-    background-color: rgb(197, 247, 200);
-    padding-left: 39%;
-    padding-right: 39%;
-    color: rgb(15, 88, 15);
-    border-radius: 20px;
+    border:1px solid rgb(193, 199, 193);
+    padding-left: 33%;
+    padding-right: 33%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: rgb(133, 139, 133);
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+}
+.create-profile-pic{
+    width: 8%;
+}
+
+.trending-tags{
+    background-color: #fff;
+    border:1px solid rgb(193, 199, 193);
+    border-radius: 10px;
+    padding: 10px 15px;
+    top: 0;
+    position: sticky;
+    color: rgb(109, 116, 109);
+}
+
+.trending-tag-head{
+    color: #333333;
+}
+
+.week-task-head{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    background-color: rgb(133, 240, 133);
+    padding: 10px 15px;
+}
+
+.weekly-task{
+    top: 0;
+    position: sticky;
+    color: rgb(109, 116, 109);
+    background-color: #fff;
+    border:1px solid rgb(193, 199, 193);
+    border-radius: 10px;
+}
+
+.task-details{
+    padding: 10px 15px;
+}
+
+.profile-div{
+    color: rgb(109, 116, 109);
+    background-color: #fff;
+    border:1px solid rgb(193, 199, 193);
+    border-radius: 10px;
+}
+.feed-pic{
+    width: 20%;
+}
+.pic-div{
+    background-color: rgb(133, 240, 133);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {
