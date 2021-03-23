@@ -28,15 +28,22 @@
             <div class=" collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto ">
 
-                <li class="nav-item ">
+                
                     {% if isLoggedin %}
-                    <a class="nav-link  mx-auto" href="/profile/{{username}}">Profile</a>
-                    <a class="nav-link join-btn mx-auto" href="/auth/logout">Log out</a>
+                    <li class="nav-item "></li>
+                        <a class="nav-link  mx-auto" href="/profile/{{username}}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link join-btn mx-auto" href="/auth/logout">Log out</a>
+                    </li>
                     {% else %}
-                    <a class="nav-link  mx-auto" href="/auth/login">Login</a>
-                    <a class="nav-link  mx-auto" href="/auth/register">Sign up</a>
+                    <li class="nav-item">
+                        <a class="nav-link  mx-auto" href="/auth/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  mx-auto" href="/auth/register">Sign up</a>
+                    </li>
                     {% endif %}
-                </li>
                 
             </ul>
             

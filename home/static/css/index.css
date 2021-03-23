@@ -55,6 +55,14 @@ body{
     transform: translateX(-50%);
 }
 
+.btn-new-post{
+    background-color: rgb(197, 247, 200);
+    padding-left: 39%;
+    padding-right: 39%;
+    color: rgb(15, 88, 15);
+    border-radius: 20px;
+}
+
 @media only screen and (max-width: 600px) {
     .hero-text {
         position: absolute;
