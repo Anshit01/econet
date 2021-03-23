@@ -1,1 +1,14 @@
-Register
+{% load static %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+{% endblock %}
+
+{% block body_block %}
+<!-- <h1>hello</h1> -->
+<div class="landing text-center">
+    <img src="{% static 'images/econet.jpg' %}" class="hero-img" alt="econet"/>
+    
+</div>
+{% endblock %}
