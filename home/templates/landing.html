@@ -1,13 +1,11 @@
-<div className="body text-center">
-    <header>
-        <img src="{% static 'images/econet.jpg' %}" class="hero-img" alt="vaccination"/>
+{% load static %}
+
+
+<div class="body text-center">
+        <img src="{% static 'images/econet.jpg' %}" class="hero-img" alt="econet"/>
         <section class="hero-text">
-            <h1 class="welcome-head">Welcome to Econet</h1>
-            <p class="welcome-text">Securely record and access administered COVID-19 vaccinations</p>
-            <span>
-                <Link to="/patient_reg" class="btn patient">Patient</Link>
-                <Link to="/doctor_login" class="btn doctor">Medical Staff</Link>
-            </span>
+            <h1 class="welcome-head">Welcome to econet</h1>
+            <p class="welcome-text text-center">A network to promote sustainable development and share with world</p>
+            <button class="btn btn-explore">Explore</button>
         </section>
-    </header>    
 </div>
