@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #f5eaea;
+  color: #616161;
+}
+
+.cover {
+  height: 200px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(128, 214, 113, 0.8),
+    rgba(53, 175, 16, 0.8)
+  );
+}
+
+.profile-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#left {
+  margin-top: -150px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+}
+
+#user .fa {
+  font-size: 20px;
+}
+
+#user .row {
+  width: auto;
+}
+
+.content {
+  max-width: auto;
+  margin: 0 auto;
+}
+
+.content .social-description {
+  display: inline-block;
+  max-width: 150px;
+  width: 145px;
+  text-align: center;
+  margin: 15px 0 0px;
+}
+
+.content .social-description h2 {
+  margin-bottom: 15px;
+}
