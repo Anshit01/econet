@@ -3,7 +3,9 @@
 
 {% block head_block %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <script src="{% static 'js/post.js' %}"></script>
+    {% endblock %}
 
 {% block body_block %}
 <div class="cover"></div>
@@ -62,21 +64,12 @@
 <hr>
 <!---------- posts ------->
 <div class="container">
-    <div class="row">
-        <div class="col-md-7">
-            <div class="post">
-                <span class="post-profile">
-                    <img class="post-profile-img" src="{% static 'images/profile.png' %}" />
-                    <div class="post-profile-details">
-                        <h4 class="post-profile-details-name">shwetal</h4>
-                        <p class="post-profile-details-date">Mar 12, 2021</p>
-                    </div>
-                </span>
-                <div class="post-content">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-12 col-md-8 mx-auto">
+          {% for post in posts %}
+              {% include 'post.html' %}
+          {% endfor %}
+      </div>
+  </div>
 </div>
 {% endblock %}
