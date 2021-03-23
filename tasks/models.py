@@ -9,5 +9,11 @@ class Task(models.Model):
     taskType = models.CharField(max_length=1, choices=(
         ("W", "Weekly"), ("G", "General")))
 
-    # def __str__(self):
-    #     return name
+    def __str__(self):
+        toRet = f"{self.name} - "
+        if self.taskType == "W":
+            toRet += "Weekly"
+        else:
+            toRet += "General"
+        toRet += f" - {self.worthPoints}"
+        return toRet
