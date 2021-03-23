@@ -4,7 +4,7 @@ body{
     margin: 0%;
 }
 .landing{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
@@ -25,7 +25,6 @@ body{
     height: 100vh;
     object-fit: cover;
     filter: brightness(.2);
-    opacity: 0.9;
 }
 
 .welcome-head{
