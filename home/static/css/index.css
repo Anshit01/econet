@@ -56,6 +56,10 @@ body{
     transform: translateX(-50%);
 }
 
+.btn-new-post{
+    background-color: rgb(197, 247, 200);
+}
+
 @media only screen and (max-width: 600px) {
     .hero-text {
         position: absolute;
