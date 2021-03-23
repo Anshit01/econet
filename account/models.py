@@ -7,7 +7,7 @@ from tasks.models import Task
 
 
 class User(models.Model):
-    username = models.CharField(max_length=100)
+    username = models.CharField(max_length=100, unique=True)
     imageURL = models.URLField(default="https://i.imgur.com/4zsBXBE.png")
     bio = models.TextField()
 
