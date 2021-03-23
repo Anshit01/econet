@@ -21,5 +21,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('auth/', include('account.urls')),
     # path('user', include('userProfile.urls')),
-    path('tasks/', include('tasks.urls')),
+    path('tasks/', include('task.urls')),
 ]

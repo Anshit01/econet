@@ -1,7 +1,8 @@
 from django.db import models
 from djongo import models
+from datetime import datetime
 
-from tasks.models import Task
+from task.models import TaskTodo
 
 # Create your models here.
 
@@ -11,13 +12,14 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     imageURL = models.URLField(default="https://i.imgur.com/4zsBXBE.png")
     bio = models.TextField()
+    joinedOn = models.DateTimeField(default=datetime.now)
 
     #stats
     badge = models.CharField(max_length=100)
     points = models.IntegerField()
 
     tasksCompleted = models.ArrayReferenceField(
-        to=Task,
+        to=TaskTodo,
         on_delete=models.CASCADE,
         blank=True
     )
@@ -25,7 +27,7 @@ class User(models.Model):
     # posts: reverse reference
 
     def __str__(self):
-        return str(self.id) + ' - ' + self.username + ' - ' + str(len(self.posts.all()))
+        return self.username + ' - ' + str(len(self.posts.all()))
 
 class Post(models.Model):
     
@@ -37,9 +39,10 @@ class Post(models.Model):
 
     caption = models.TextField()
     imageURL = models.URLField()
+    postedOn = models.DateTimeField(default=datetime.now)
 
     linkedTask = models.ForeignKey(
-        to=Task,
+        to=TaskTodo,
         on_delete=models.CASCADE,
         related_name='posts',
         blank=True

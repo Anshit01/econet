@@ -3,9 +3,12 @@
 
 {% block head_block %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/home.js' %}"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 {% endblock %}
 
 {% block body_block %}
-    {% include 'landing.html' %}
+    {% if isLoggedin == False %}
+        {% include 'landing.html' %}
+    {% endif %}
 {% endblock %}

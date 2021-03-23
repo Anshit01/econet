@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
+
+from .models import User
 
 # Create your views here.
 def register(request):
@@ -23,3 +25,8 @@ def logout(request):
     request.session.pop('username', None)
     #TODO handle logout
     return redirect('/')
+
+def checkUser(request, username):
+    if User.objects.filter(username=username).count():
+        return HttpResponse(1)
+    return HttpResponse(0)
