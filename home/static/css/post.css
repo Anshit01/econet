@@ -1,0 +1,29 @@
+.post {
+    width: 100%;
+    border: 2px solid #777;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.post-header {
+    height: 60px;
+    padding: 10px;
+}
+
+.post-author-image {
+    height: 100%;
+}
+
+.post-author-name {
+    padding: 0 20px;
+    font-weight: bold;
+
+}
+
+.post-caption {
+    padding: 10px 20px;
+}
+
+.post-image {
+    width: 100%;
+}
