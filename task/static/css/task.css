@@ -7,10 +7,11 @@
 }
 
 .tasksholder{
-    margin: 10px 40px;
+    margin: 10px auto;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 40px;
+    width: 80%;
+    padding: 1%;
 }
 
 .taskholder{
@@ -22,42 +23,70 @@
 .taskinfoholder{
     padding: 20px;
     flex: 1 1 25%;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .taskpostsholder{
-    padding: 20px;
+    padding:  10px 1%;
     flex: 1 1 75%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .taskinfo{
+    position: relative;
     background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px 5px;
+    /* border-radius: 5px; */
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+    /* padding: 40%; */
+    /* box-shadow: 2px 2px 5px 5px; */
 }
 
 .taskname{
     font-weight: bold;
+    font-size: 25px;
     text-align: center;
 }
 
 .taskworthpoint{
+    font-size: 20px;
     text-align: center;
-}
+}   
 
 .taskpostholder{
-    background-color: white;
+    display: inline-flex;
+    flex-flow: column;
+    width: 250px;
+    margin: 0 15px;
+    height: 100%;
     border-radius: 5px;
-    padding: 20px;
     box-shadow: 2px 2px 5px 5px;
 }
 
 .postimage{
-    width: inherit;
+    width: 100%;
 }
 
 .postcaption{
+    white-space: normal;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
+
+/* .postcaption::before{
+    content: attr(likes);
+    position: relative;
+    height: max-content;
+    width: max-content;
+    top: -35px;
+    font-weight: bold;
+    text-shadow: 0 0 3px white;
+} */

@@ -4,13 +4,13 @@ from account.models import User, Post
 
 # Create your views here.
 def user(request, username):
-    username = request.session.get('username', None)
+    loggedinUsername = request.session.get('username', None)
     posts = Post.objects.all()
     users = User.objects.filter(username=username)
     if users.count():
         context = {
             'user': users[0],
-            'isLoggedin': True if username else False,
+            'isLoggedin': True if loggedinUsername else False,
             'username': username,
             'posts': posts,
         }

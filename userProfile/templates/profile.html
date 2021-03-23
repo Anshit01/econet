@@ -24,12 +24,15 @@
         </div>
         <div class="">
             <!-- User Name -->
-          <h4 class="font-weight-bold text-center">Your Name</h4>
+          <h4 class="font-weight-bold text-center">{{user.username}}</h4>
           <div class="row">
             <div class="col">
                 <!-- Bio -->
-              <div class=" text-center">
-                Lorem ipsum dolor sit amet consectetur
+              <div class="user-bio text-center">
+                {{user.bio}}
+              </div>
+              <div class="user-badge text-center">
+                {{user.badge}}
               </div>
             </div>
           </div>
@@ -46,15 +49,15 @@
       <!-- Contribution -->
       <div class="content text-center mb-5">
         <div class="social-description" id="points">
-          <h2>26</h2>
+          <h2>{{user.points}}</h2>
           <p>Points</p>
         </div>
         <div class="social-description" id="rank">
-          <h2>48</h2>
+          <h2>#1</h2>
           <p>Rank</p>
         </div>
         <div class="social-description" id="tasks">
-          <h2>48</h2>
+          <h2>{{user.tasksCompleted|length}}</h2>
           <p>Tasks Completed</p>
         </div>
       </div>    

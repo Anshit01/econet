@@ -25,7 +25,10 @@
                     <div class="taskpostsholder">
                         {% for post in task.posts.all %}
                             <div class="taskpostholder">
-                                {{post.caption}}
+                                <img class="postimage" src="{{post.imageURL}}"/>
+                                <div class="postcaption" likes="👍 {{post.likes}}" >
+                                    {{post.caption}}
+                                </div>
                             </div>
                         {% endfor %}
                     </div>
@@ -51,7 +54,7 @@
                         {% for post in task.posts.all %}
                             <div class="taskpostholder">
                                 <img class="postimage" src="{{post.imageURL}}"/>
-                                <div class="postcaption">
+                                <div class="postcaption" likes="👍 {{post.likes}}" >
                                     {{post.caption}}
                                 </div>
                             </div>
