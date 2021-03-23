@@ -7,5 +7,7 @@ from econet import settings
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home),
+    path('like_post/<id>', views.likePost),
+
 ]
