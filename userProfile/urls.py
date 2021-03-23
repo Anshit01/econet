@@ -6,5 +6,5 @@ from django.conf.urls.static import static
 from econet import settings
 
 urlpatterns = [
-    path('userprofile/', views.user, name='user'),
+    path('<username>', views.user, name='user'),
 ]
