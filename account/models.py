@@ -27,7 +27,7 @@ class User(models.Model):
     # posts: reverse reference
 
     def __str__(self):
-        return self.username + ' - ' + str(len(self.posts.all()))
+        return self.username
 
 class Post(models.Model):
     
@@ -52,5 +52,5 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
 
     def __str__(self):
-        return str(self.author)
+        return str(self.author) + ' - ' + str(self.postedOn) + ' - ' + self.caption[:50]
 
