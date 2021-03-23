@@ -88,19 +88,6 @@ WSGI_APPLICATION = 'econet.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#    'default': {
-#       'ENGINE' : 'djongo',
-      
-#     #    'NAME' : 'your-db-name', #as named on server
-      
-#        'HOST' : config['DATABASE_URL'],
-#     #    'USER' : '<dbuser>',
-#     #    'PASSWORD' : '<dbpassword>',
-
-#    }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
