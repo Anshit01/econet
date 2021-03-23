@@ -20,7 +20,7 @@ body{
     margin: 0%;
 }
 .landing{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
@@ -41,7 +41,6 @@ body{
     height: 100vh;
     object-fit: cover;
     filter: brightness(.2);
-    opacity: 0.9;
 }
 
 .welcome-head{
@@ -70,6 +69,14 @@ body{
     margin-top: 50px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.btn-new-post{
+    background-color: rgb(197, 247, 200);
+    padding-left: 39%;
+    padding-right: 39%;
+    color: rgb(15, 88, 15);
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 600px) {

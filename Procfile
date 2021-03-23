@@ -1,1 +1,1 @@
-web: gunicorn findMyHospital.wsgi --log-file -
+web: gunicorn econet.wsgi --log-file -

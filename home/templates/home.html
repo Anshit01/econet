@@ -3,7 +3,9 @@
 
 {% block head_block %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
     <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/post.js' %}"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 {% endblock %}
 
@@ -11,4 +13,16 @@
     {% if isLoggedin == False %}
         {% include 'landing.html' %}
     {% endif %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+                <button class="btn btn-new-post text-center">Create New Post</button>
+                {% for post in posts %}
+                    {% include 'post.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}

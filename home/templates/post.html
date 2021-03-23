@@ -1,0 +1,21 @@
+<div class="post" data="{{post.id}}">
+    <a href="/profile/{{post.author.username}}">
+        <div class="post-header">
+                <img class="post-author-image" src="{{post.author.imageURL}}">
+            <span class="post-author-name">{{post.author.username}}</span>
+        </div>
+    </a>
+    <div class="post-caption">
+        {{post.caption}}
+    </div>
+    <img class="post-image" src="{{post.imageURL}}">
+    <div cass="post-footer">
+        <span class="post-like">
+            Like
+            <!-- Like icon(heart) -->
+        </span>
+        <span class="post-likes-count">
+            {{post.likes}} Likes
+        </span>
+    </div>
+</div>

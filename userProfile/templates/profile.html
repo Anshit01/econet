@@ -2,8 +2,10 @@
 {% load static %}
 
 {% block head_block %}
-    <link rel="stylesheet" href="{% static 'css/user.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <script src="{% static 'js/post.js' %}"></script>
+    {% endblock %}
 
 {% block body_block %}
 <div class="cover"></div>
@@ -22,12 +24,15 @@
         </div>
         <div class="">
             <!-- User Name -->
-          <h4 class="font-weight-bold text-center">Your Name</h4>
+          <h4 class="font-weight-bold text-center">{{user.username}}</h4>
           <div class="row">
             <div class="col">
                 <!-- Bio -->
-              <div class=" text-center">
-                Lorem ipsum dolor sit amet consectetur
+              <div class="user-bio text-center">
+                {{user.bio}}
+              </div>
+              <div class="user-badge text-center">
+                {{user.badge}}
               </div>
             </div>
           </div>
@@ -44,15 +49,15 @@
       <!-- Contribution -->
       <div class="content text-center mb-5">
         <div class="social-description" id="points">
-          <h2>26</h2>
+          <h2>{{user.points}}</h2>
           <p>Points</p>
         </div>
         <div class="social-description" id="rank">
-          <h2>48</h2>
+          <h2>#1</h2>
           <p>Rank</p>
         </div>
         <div class="social-description" id="tasks">
-          <h2>48</h2>
+          <h2>{{user.tasksCompleted|length}}</h2>
           <p>Tasks Completed</p>
         </div>
       </div>    
@@ -62,21 +67,12 @@
 <hr>
 <!---------- posts ------->
 <div class="container">
-    <div class="row">
-        <div class="col-md-7">
-            <div class="post">
-                <span class="post-profile">
-                    <img class="post-profile-img" src="{% static 'images/profile.png' %}" />
-                    <div class="post-profile-details">
-                        <h4 class="post-profile-details-name">shwetal</h4>
-                        <p class="post-profile-details-date">Mar 12, 2021</p>
-                    </div>
-                </span>
-                <div class="post-content">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-12 col-md-8 mx-auto">
+          {% for post in posts %}
+              {% include 'post.html' %}
+          {% endfor %}
+      </div>
+  </div>
 </div>
 {% endblock %}
