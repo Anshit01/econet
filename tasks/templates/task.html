@@ -1,19 +1,63 @@
-<h4>All</h4>
-{% for task in allTasks %}
-{{task.name}}
-<br>
-{% endfor %}
-<br>
-<br>
-<h4>General</h4>
-{% for task in generalTasks %}
-{{task.name}}
-<br>
-{% endfor %}
-<br>
-<br>
-<h4>Weekly</h4>
-{% for task in weeklyTasks %}
-{{task.name}}
-<br>
-{% endfor %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/task.css' %}" />
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+{% endblock %}
+
+{% block body_block %}
+        <div class="taskstype">Weekly</div>
+        <div class="tasksholder">
+            {% for task in weeklyTasks %}
+                <div class="taskholder">
+                    <div class="taskinfoholder">
+                        <div class="taskinfo">
+                            <div class="taskname">
+                                {{task.name}}
+                            </div>
+                            <div class="taskworthpoint">
+                                {{task.worthPoints}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="taskpostsholder">
+                        {% for post in task.posts.all %}
+                            <div class="taskpostholder">
+                                {{post.caption}}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="taskstype">General</div>
+        <div class="tasksholder">
+            {% for task in generalTasks %}
+                <div class="taskholder">
+                    <div class="taskinfoholder">
+                        <div class="taskinfo">
+                            <div class="taskname">
+                                {{task.name}}
+                            </div>
+                            <div class="taskworthpoint">
+                                {{task.worthPoints}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="taskpostsholder">
+                        {% for post in task.posts.all %}
+                            <div class="taskpostholder">
+                                <img class="postimage" src="{{post.imageURL}}"/>
+                                <div class="postcaption">
+                                    {{post.caption}}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
