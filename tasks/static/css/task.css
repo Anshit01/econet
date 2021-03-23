@@ -1,0 +1,63 @@
+
+.taskstype{
+    width: max-content;
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tasksholder{
+    margin: 10px 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.taskholder{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.taskinfoholder{
+    padding: 20px;
+    flex: 1 1 25%;
+    min-width: 150px;
+}
+
+.taskpostsholder{
+    padding: 20px;
+    flex: 1 1 75%;
+}
+
+.taskinfo{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 5px;
+}
+
+.taskname{
+    font-weight: bold;
+    text-align: center;
+}
+
+.taskworthpoint{
+    text-align: center;
+}
+
+.taskpostholder{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 5px;
+}
+
+.postimage{
+    width: inherit;
+}
+
+.postcaption{
+    text-align: center;
+    padding: 10px;
+}
