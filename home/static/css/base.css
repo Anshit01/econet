@@ -1,5 +1,6 @@
 body{
     margin: 0%;
+    background-color: rgb(238, 253, 234);
 }
 
 a {
@@ -9,3 +10,19 @@ a {
 a:hover {
     text-decoration: none !important;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+   }
+   ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 0px;
+   }
+   ::-webkit-scrollbar-thumb:hover{
+    background: #707070;
+   }
+   ::-webkit-scrollbar-track{
+    background: #00000000;
+   }
+  
