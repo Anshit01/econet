@@ -17,15 +17,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="profile-div mt-4">
-                    <div class="pic-div">
-                        <img src="{% static 'images/profile.png' %}" class="feed-pic" />
+                {% if isLoggedin %}
+                <div class="profile-div mt-4 text-center pb-3">
+                    <div class="pic-div text-center mx-auto">
                     </div>
-                    <div class="profile-details">
-                        <p class="username">Shwetal</p>
-                        <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    <img src="{{user.imageURL}}" class="feed-pic" />
+                    <div class="profile-details mx-auto">
+                        <p class="username"><strong>{{username}}</strong></p>
+                        <p class="bio">{{user.bio}}</p>
                     </div>
                 </div>
+                {% endif %}
                 <div class="trending-tags mt-4">
                     <p class="trending-tag-head">Trending Tags</p>
                     <p class="tag"><strong>#</strong> Social Work</p>
@@ -35,10 +37,12 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 mx-auto mt-4">
+                {% if isLoggedin %}
                 <span class="create-span">
-                    <img src="{% static 'images/profile.png' %}" class="create-profile-pic" />
+                    <img src="{{user.imageURL}}" class="create-profile-pic" />
                     <button class="btn btn-new-post text-center">Create New Post</button>
                 </span>
+                {% endif %}
                 
                 {% for post in posts %}
                     {% include 'post.html' %}

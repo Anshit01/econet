@@ -11,7 +11,9 @@ def home(request):
         'isLoggedin': True if username else False,
         'username': username,
         'posts': posts,
-        
     }
+    users = User.objects.filter(username=username)
+    if users.count():
+        context["user"] = users[0]
     return render(request, 'home.html', context)
 
