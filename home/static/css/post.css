@@ -28,3 +28,7 @@
 .post-image {
     width: 100%;
 }
+
+.post-datetime {
+    color: #777;
+}

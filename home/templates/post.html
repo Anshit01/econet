@@ -1,21 +1,21 @@
-<div class="post" data="{{post.id}}">
+<div class="post" data-id="{{post.id}}">
     <a href="/profile/{{post.author.username}}">
         <div class="post-header">
-                <img class="post-author-image" src="{{post.author.imageURL}}">
-            <span class="post-author-name">{{post.author.username}}</span>
+            <img class="post-author-image" src="{{post.author.imageURL}}">
+            <span class="post-author-name">{{post.author.username}}</span><br>
         </div>
     </a>
     <div class="post-caption">
-        {{post.caption}}
+        <p class="post-datetime">Posted on {{post.postedOn}}</p>
+        <p>{{post.caption}}</p>
     </div>
     <img class="post-image" src="{{post.imageURL}}">
     <div cass="post-footer">
-        <span class="post-like">
-            Like
-            <!-- Like icon(heart) -->
-        </span>
-        <span class="post-likes-count">
-            {{post.likes}} Likes
-        </span>
+        <a class="post-like" href="" data-id="{{post.id}}">
+            <span class=" fa fa-heart-o fa-2x"></span>
+        </a>
+        <span id="post-likes-count{{post.id}}" class="post-likes-count">
+            {{post.likes}}
+        </span> Likes
     </div>
 </div>

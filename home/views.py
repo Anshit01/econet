@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 from account.models import User, Post
 from task.models import TaskTodo
@@ -16,4 +16,17 @@ def home(request):
     if users.count():
         context["user"] = users[0]
     return render(request, 'home.html', context)
+
+def likePost(request, id):
+    username = request.session.get('username', None)
+    posts = Post.objects.filter(id=id)
+    if username and posts.count() > 0:
+        post = posts[0]
+        post.likes += 1
+        author = post.author
+        author.points += 1
+        author.save()
+        post.save()
+        return HttpResponse(1)
+    return HttpResponse(0)
 
