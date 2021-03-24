@@ -64,6 +64,7 @@
     width: 250px;
     margin: 0 15px;
     height: 100%;
+    overflow: hidden;
     border-radius: 5px;
     box-shadow: 2px 2px 5px 5px;
 }
