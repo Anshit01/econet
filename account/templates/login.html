@@ -10,23 +10,24 @@
     <img src="{% static 'images/econet.jpg' %}" class="hero-img" alt="econet"/>
     <div class="login-box">
         <h2>Login</h2>
-        <form>
+        <form method="POST" action="/auth/login">
+          {% csrf_token %}
           <div class="user-box" id="username">
-            <input type="text" name="" required="" />
+            <input type="text" name="username" required />
             <label>Username</label>
           </div>
           <div class="user-box" id="password">
-            <input type="password" name="" required="" />
+            <input type="password" name="password" required />
             <label>Password</label>
           </div>
 
-          <a href="#">
+          <input type="submit" class="btn-submit" href="#">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
-          </a>
+          </input>
         </form>
       </div>
     
