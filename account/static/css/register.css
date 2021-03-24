@@ -17,6 +17,10 @@ body {
     opacity: 0.9;
 }
 
+.error {
+  color: rgb(241, 77, 77);
+}
+
 .login-box {
   position: absolute;
   top: 50%;

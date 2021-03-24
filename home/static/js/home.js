@@ -68,7 +68,7 @@ $( document ).ready(function() {
             return false
         }
         let task = document.getElementById('post-task').value
-        let caption = $('#post-caption').text()
+        let caption = $('#post-caption').val()
         let csrfmiddlewaretoken = $('[name=csrfmiddlewaretoken]').val()
         data = {
             task:task,

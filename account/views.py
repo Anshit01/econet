@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, HttpResponse
 
 from .models import User
 
+from utils.utils import hash
+
 # Create your views here.
 def register(request):
     context = {
@@ -13,7 +15,9 @@ def register(request):
 
     elif request.method == 'POST':
         data = request.POST
-        print(data)
+        username = data['username']
+        password = data['password']
+        
         return render(request, 'register.html', context)
 
 def login(request):
@@ -30,11 +34,15 @@ def login(request):
         username = data['username']
         password = data['password']
         print(username, password)
+        users = User.objects.filter(username=username)
+        if users.count() and users[0].password == hash(password):
+            request.session['username'] = username
+            return redirect('/')
+        context['error'] = 'Incorrect username or password'
         return render(request, 'login.html', context)
 
 def logout(request):
     request.session.pop('username', None)
-    #TODO handle logout
     return redirect('/')
 
 def checkUser(request, username):
