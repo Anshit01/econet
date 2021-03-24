@@ -31,6 +31,11 @@
     margin: 0%;
 }
 
+.leaf-icon{
+    width: 40px;
+    
+}
+
 .welcome-text{
     font-size: 18px;
     color: #cce2cc;
@@ -58,8 +63,6 @@
 
 .btn-new-post{
     border:1px solid rgb(193, 199, 193);
-    /* padding-left: 33%;
-    padding-right: 33%; */
     padding-top: 12px;
     padding-bottom: 12px;
     width: 85%;
@@ -73,13 +76,16 @@
     width: 10%;
 }
 
+.sec-3{
+    position: sticky;
+    top: 5%;
+}
+
 .trending-tags{
     background-color: #fff;
     border:1px solid rgb(193, 199, 193);
     border-radius: 10px;
     padding: 10px 15px;
-    top: 0;
-    position: sticky;
     color: rgb(109, 116, 109);
 }
 
@@ -90,15 +96,21 @@
 .week-task-head{
     font-size: 18px;
     font-weight: 600;
-    color: #333333;
-    background-color: rgb(133, 240, 133);
+    color: #3b3a3a;
+    /* background-color: rgb(133, 240, 133); */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(128, 214, 113, 0.8),
+        rgba(53, 175, 16, 0.8)
+      );
     padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
 }
 
 .weekly-task{
-    top: 0;
+    top: 5%;
     position: sticky;
-    color: rgb(109, 116, 109);
+    color: #333333;
     background-color: #fff;
     border:1px solid rgb(193, 199, 193);
     border-radius: 10px;
@@ -109,24 +121,27 @@
 }
 
 .profile-div{
-    color: rgb(109, 116, 109);
+    color: #333333;
     background-color: #fff;
     border:1px solid rgb(193, 199, 193);
     border-radius: 15px;
-    /* padding-left: 10px;
-    padding-right: 10px; */
 }
 .feed-pic{
     width: 20%;
     position: absolute;
-    top: 1.5%;
+    top: 7%;
     transform: translateX(-50%);
 }
 .pic-div{
-    background-color: rgb(133, 240, 133);
+    /* background-color: rgb(133, 240, 133); */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(128, 214, 113, 0.8),
+        rgba(53, 175, 16, 0.8)
+      );
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     border-radius: 15px 15px 0 0 ;
 }
 
@@ -140,6 +155,7 @@
 }
 .username{
     margin-bottom: 1%;
+    color: #333333;
 }
 
 @media only screen and (max-width: 600px) {

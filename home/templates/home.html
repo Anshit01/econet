@@ -17,23 +17,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                {% if isLoggedin %}
-                <div class="profile-div mt-4 text-center pb-3">
-                    <div class="pic-div text-center mx-auto">
+                <div class="sec-3">
+                    {% if isLoggedin %}
+                    <div class="profile-div mt-4 text-center pb-3">
+                        <div class="pic-div text-center mx-auto">
+                        </div>
+                        <img src="{{user.imageURL}}" class="feed-pic" />
+                        <div class="profile-details mx-auto">
+                            <p class="username"><strong>{{username}}</strong></p>
+                            <p class="bio">{{user.bio}}</p>
+                        </div>
                     </div>
-                    <img src="{{user.imageURL}}" class="feed-pic" />
-                    <div class="profile-details mx-auto">
-                        <p class="username"><strong>{{username}}</strong></p>
-                        <p class="bio">{{user.bio}}</p>
+                    {% endif %}
+                    <div class="trending-tags mt-4">
+                        <p class="trending-tag-head">Trending Tags</p>
+                        <p class="tag"><strong>#</strong> Social Work</p>
+                        <p class="tag"><strong>#</strong> Book Donation</p>
+                        <p class="tag"><strong>#</strong> Environment</p>
+                        <p class="tag"><strong>#</strong> Reuse</p>
                     </div>
-                </div>
-                {% endif %}
-                <div class="trending-tags mt-4">
-                    <p class="trending-tag-head">Trending Tags</p>
-                    <p class="tag"><strong>#</strong> Social Work</p>
-                    <p class="tag"><strong>#</strong> Book Donation</p>
-                    <p class="tag"><strong>#</strong> Environment</p>
-                    <p class="tag"><strong>#</strong> Reuse</p>
                 </div>
             </div>
             <div class="col-12 col-md-6 mx-auto mt-4">
@@ -49,7 +51,6 @@
                 {% endfor %}
             </div>
             <div class="col-md-3">
-                
                 <div class="weekly-task mt-4">
                     <div class="week-task-head">This week's task</div>
                     <div class="task-details">

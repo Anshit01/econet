@@ -2,8 +2,10 @@
     width: 100%;
     border:1px solid rgb(193, 199, 193);
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .post-header {
@@ -16,7 +18,7 @@
 }
 
 .post-author-name {
-    padding: 0 20px;
+    padding: 0 10px;
     font-weight: bold;
 
 }
@@ -31,4 +33,13 @@
 
 .post-datetime {
     color: #777;
+}
+
+.post-like{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.post-likes-count{
+    font-size: 20px;
 }
