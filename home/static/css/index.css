@@ -170,6 +170,9 @@
 textarea {
     width: 80%;
 }
+.post-image-status{
+    margin-left: 15px;
+}
 textarea:focus{
     border: 1px solid transparent;
     outline: none;
