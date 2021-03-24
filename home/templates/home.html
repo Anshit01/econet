@@ -30,7 +30,7 @@
           <div class="modal-content">
             <form method="POST" action="/new">
                 {% csrf_token %}
-                <p><input id="post-image-file" accept="image/gif, image/jpeg, image/png" type="file" name="post-image-file" onchange="loadPostImage(event)"></p>
+                <p><input id="post-image-file" accept="image/gif, image/jpeg, image/png" type="file" name="post-image-file"></p>
                 <p><img id="post-image" /></p>
                 <label for="post-task">Choose a task:</label>
                 <select id="post-task" name="post-task" name="post-task">
@@ -38,8 +38,9 @@
                     <option value="{{task.id}}">{{task}}</option>
                     {% endfor %}
                 </select>
-                <p><textarea id="post-caption" placeholder="Caption" name="post-caption" ></textarea>
-                <button class="btn" type="submit">POST</button>
+                <p><textarea id="post-caption" placeholder="Caption" name="post-caption" ></textarea></p>
+                <p class="post-image-status"></p>
+                <button class="post-btn" type="submit">POST</button>
             </form>
           </div>
         </div>
