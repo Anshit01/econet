@@ -9,7 +9,7 @@ def register(request):
         return render(request, 'register.html')
 
     elif request.method == 'POST':
-        #TODO
+        password = "ProvideFrom"
         pass
 
 def login(request):
@@ -24,7 +24,7 @@ def login(request):
 def logout(request):
     request.session.pop('username', None)
     #TODO handle logout
-    return redirect('/')
+    return redirect('/')    
 
 def checkUser(request, username):
     if User.objects.filter(username=username).count():

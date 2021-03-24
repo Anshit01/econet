@@ -2,6 +2,9 @@
 
 {% block head_block %}
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="{% static 'js/register.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% endblock %}
 
 {% block body_block %}
@@ -10,31 +13,27 @@
     <img src="{% static 'images/econet.jpg' %}" class="hero-img" alt="econet"/>
     <div class="login-box">
         <h2>Register</h2>
-        <form>
+        <form onsubmit="return validate()">
           <div class="user-box" id="username">
-            <input type="text" name="" required="" />
+            <input type="text" id="input-username" name="" required="" />
             <label>Username</label>
           </div>
           <div class="user-box" id="password">
-            <input type="password" name="" required="" />
+            <input type="password" id="input-password" name="" required="" />
             <label>Password</label>
           </div>
-          <div class="user-box" id="bio">
-            <input type="text" name="" required="" />
-            <label>Bio</label>
+          <div class="user-box" id="password-confirm">
+            <input type="password" id="input-confirm-password" name="" required="" />
+            <label>Confirm Password</label>
           </div>
-          <div class="user-box" id="imgurl">
-            <input type="url" name="" required="" />
-            <label>Image Url</label>
-          </div>
-
-          <a href="#">
+          <p id="warning"></p>
+          <button type="submit" class="btn btn-success">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
-          </a>
+          </button>
         </form>
       </div>
     
