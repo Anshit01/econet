@@ -28,8 +28,19 @@
     <div id="new-post-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
+            <span class="modal-header">
+                <h3 class="create-post-head">Create a post</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </span>
+            <div class="modal-profile">
+                <img src="{{user.imageURL}}" class="modal-dp" />
+                <span class="modal-profile-name">{{username}}</span>
+            </div>
             <form method="POST" action="/new">
                 {% csrf_token %}
+                <p><textarea id="post-caption" placeholder="What do you want to talk about ?" name="post-caption" class="modal-caption" cols="100" rows="5"></textarea></p>
                 <p><input id="post-image-file" accept="image/gif, image/jpeg, image/png" type="file" name="post-image-file"></p>
                 <p><img id="post-image" /></p>
                 <label for="post-task">Choose a task:</label>
@@ -38,7 +49,6 @@
                     <option value="{{task.id}}">{{task}}</option>
                     {% endfor %}
                 </select>
-                <p><textarea id="post-caption" placeholder="Caption" name="post-caption" ></textarea></p>
                 <p class="post-image-status"></p>
                 <button class="post-btn" type="submit">POST</button>
             </form>

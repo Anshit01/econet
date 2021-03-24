@@ -148,6 +148,50 @@
     margin-bottom: 1%;
     color: #333333;
 }
+.modal-profile{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.modal-dp{
+    width: 30px;
+    height: 30px;
+}
+.modal-profile-name{
+    color: #333333;
+    font-weight: 600;
+    font-size: 18px;
+}
+.modal-caption{
+    margin-left: 15px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+}
+textarea:focus{
+    border: 1px solid transparent;
+    outline: none;
+}
+#post-image-file{
+    margin-left: 20px;
+}
+label{
+    margin-left: 15px;
+}
+#post-image{
+    width: 60%;
+    margin-left: 15px;
+}
+.post-btn{
+    margin-left: 15px;
+    border: none;
+    border-radius: 20px ;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(128, 214, 113, 0.8),
+        rgba(53, 175, 16, 0.8)
+      );
+    padding: 5px 20px;
+    margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 600px) {
     .hero-text {
