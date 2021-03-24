@@ -28,12 +28,13 @@
     <div id="new-post-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <form method="POST" action="/new">
+            <form method="POST">
                 {% csrf_token %}
                 <p><input id="post-image-file" accept="image/gif, image/jpeg, image/png" type="file" name="post-image-file"></p>
                 <p><img id="post-image" /></p>
                 <label for="post-task">Choose a task:</label>
                 <select id="post-task" name="post-task" name="post-task">
+                    <option value="">Custom</option>
                     {% for task in alltasks %}
                     <option value="{{task.id}}">{{task}}</option>
                     {% endfor %}

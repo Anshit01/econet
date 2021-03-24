@@ -2,6 +2,7 @@ import json
 
 import requests
 from django.shortcuts import render, HttpResponse
+from django.http import HttpResponseNotAllowed
 
 from econet.config import config
 from account.models import User, Post
@@ -36,23 +37,27 @@ def getPost(request):
     return render(request, "post.html", context={"post":post})
 
 def newPost(request):
-    url = "https://api.imgur.com/3/image"
-    payload={'image': 'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}
-    files=[
-    ]
-    headers = {
-    'Authorization': f'Client-ID {config["IMGUR_CLIENT_ID"]}'
-    }
-    res = requests.request("POST", url, headers=headers, data=payload, files=files)
-    response = json.loads(res.text)
-    if response["success"]:
-        # Image Uploaded
-        imageUploadedLink = response["data"]["link"]
-        imageDeleteHash = response["data"]["deletehash"]
-    else:
-        # Image Upload Failed
-        pass
-    return HttpResponse(str(vars(request.POST)))
+    if request.method == "POST":
+        username = request.session.get('username', None)
+        print("Got a new post")
+        data = dict(request.POST)
+        print(data)
+        linkedTask = None
+        taskId = data['task'][0]
+        if taskId:
+            linkedTasks = TaskTodo.objects.filter(id=data['task'][0])
+            if linkedTasks.count():
+                linkedTask = linkedTasks[0]
+        author = User.objects.filter(username=username)[0]
+        newPost = Post(
+            imageURL=data['imageURL'][0],
+            author=author,
+            caption=data['caption'][0],
+            linkedTask=linkedTask
+        )
+        newPost.save()
+        return HttpResponse(1)
+    return HttpResponseNotAllowed(['POST'])
 
 def likePost(request, id):
     username = request.session.get('username', None)
