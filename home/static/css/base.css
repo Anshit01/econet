@@ -25,4 +25,21 @@ a:hover {
    ::-webkit-scrollbar-track{
     background: #00000000;
    }
+
+.icon{
+    width: 30px;
+    margin-right: 5px;
+} 
+
+.navbar-brand{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(17, 87, 17);
+}
+
+.nav-link{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+}
   

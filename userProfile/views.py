@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from account.models import User, Post
 
-# Create your views here.
+# Create your views here. 
 def user(request, username):
     loggedinUsername = request.session.get('username', None)
     posts = Post.objects.all()

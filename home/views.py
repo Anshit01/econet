@@ -21,6 +21,9 @@ def home(request):
         'alltasks': alltasks
 
     }
+    users = User.objects.filter(username=username)
+    if users.count():
+        context["user"] = users[0]
     return render(request, 'home.html', context)
 
 def getPost(request):
