@@ -8,4 +8,6 @@ from econet import settings
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('getpost', views.getPost),
+    path('new', views.newPost),
 ]
