@@ -2,12 +2,14 @@ let postImageUrl = ''
 
 
 $( document ).ready(function() {
+
+    let postImageStatus = $('.post-image-status')
+
     $('.btn-explore').click(function() {
         $('.landing').fadeOut()
     })
 
     $('input[type=file]').on('change', function () {
-        let postImageStatus = $('.post-image-status')
         postImageStatus.text('')
         postImageUrl = ''
         var $files = $(this).get(0).files;
@@ -25,7 +27,9 @@ $( document ).ready(function() {
 
             // Begin file upload
             console.log('Uploading file to Imgur..');
-            postImageStatus.text('Uploading image....')
+            postImageStatus.html(
+                '<div class="spinner-border text-success" role="status"><span class="sr-only"></span></div> Uploading image....'
+            )
             var apiUrl = 'https://api.imgur.com/3/image';
             var apiKey = 'b13f51ee210f02d';
         
@@ -58,6 +62,27 @@ $( document ).ready(function() {
         }
     });
 
+    $('.post-btn').click(() => {
+        if(postImageUrl == ''){
+            alert('Image not uploaded.')
+            return false
+        }
+        let task = document.getElementById('post-task').value
+        let caption = $('#post-caption').text()
+        let csrfmiddlewaretoken = $('[name=csrfmiddlewaretoken]').val()
+        data = {
+            task:task,
+            caption:caption,
+            imageURL:postImageUrl,
+            csrfmiddlewaretoken:csrfmiddlewaretoken
+        }
+        postImageStatus.html(
+            '<div class="spinner-border text-success" role="status"><span class="sr-only"></span></div> Posting....'
+        )
+        $.post('/new', data, (response) => {
+            location.reload()
+        })
+    })
 
 });
 
