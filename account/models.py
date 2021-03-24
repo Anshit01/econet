@@ -16,7 +16,7 @@ class User(models.Model):
 
     #stats
     badge = models.CharField(max_length=100)
-    points = models.IntegerField()
+    points = models.IntegerField(default=0)
 
     tasksCompleted = models.ArrayReferenceField(
         to=TaskTodo,

@@ -1,6 +1,7 @@
 .post {
     width: 100%;
-    border: 2px solid #777;
+    border:1px solid rgb(193, 199, 193);
+    background-color: #fff;
     border-radius: 5px;
     margin: 20px 0;
 }
@@ -26,4 +27,8 @@
 
 .post-image {
     width: 100%;
+}
+
+.post-datetime {
+    color: #777;
 }

@@ -1,8 +1,7 @@
 import json
 
 import requests
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, HttpResponse
 
 from econet.config import config
 from account.models import User, Post
@@ -23,7 +22,6 @@ def home(request):
 
     }
     return render(request, 'home.html', context)
-
 
 def getPost(request):
     id = request.GET["id"]
@@ -52,3 +50,16 @@ def newPost(request):
         # Image Upload Failed
         pass
     return HttpResponse(str(vars(request.POST)))
+
+def likePost(request, id):
+    username = request.session.get('username', None)
+    posts = Post.objects.filter(id=id)
+    if username and posts.count() > 0:
+        post = posts[0]
+        post.likes += 1
+        author = post.author
+        author.points += 1
+        author.save()
+        post.save()
+        return HttpResponse(1)
+    return HttpResponse(0)
