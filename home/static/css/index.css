@@ -166,6 +166,10 @@
     margin-top: 20px;
     border: 1px solid transparent;
 }
+
+textarea {
+    width: 80%;
+}
 textarea:focus{
     border: 1px solid transparent;
     outline: none;

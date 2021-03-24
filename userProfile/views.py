@@ -5,7 +5,7 @@ from account.models import User, Post
 # Create your views here. 
 def user(request, username):
     loggedinUsername = request.session.get('username', None)
-    posts = Post.objects.all().reverse()
+    posts = Post.objects.all().order_by('-id')
     users = User.objects.filter(username=username)
     if users.count():
         context = {
