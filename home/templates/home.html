@@ -25,6 +25,26 @@
         {% include 'landing.html' %}
     {% endif %}
 
+    <div id="new-post-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <form method="POST" action="/new">
+                {% csrf_token %}
+                <p><input id="post-image-file" accept="image/gif, image/jpeg, image/png" type="file" name="post-image-file" onchange="loadPostImage(event)"></p>
+                <p><img id="post-image" /></p>
+                <label for="post-task">Choose a task:</label>
+                <select id="post-task" name="post-task" name="post-task">
+                    {% for task in alltasks %}
+                    <option value="{{task.id}}">{{task}}</option>
+                    {% endfor %}
+                </select>
+                <p><textarea id="post-caption" placeholder="Caption" name="post-caption" ></textarea>
+                <button class="btn" type="submit">POST</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -48,9 +68,8 @@
             <div class="col-12 col-md-6 mx-auto mt-4">
                 <span class="create-span">
                     <img src="{% static 'images/profile.png' %}" class="create-profile-pic" />
-                    <button class="btn btn-new-post text-center">Create New Post</button>
+                    <button class="btn btn-new-post text-center" data-toggle="modal" data-target="#new-post-modal">Create New Post</button>
                 </span>
-                
                 {% for post in posts %}
                     {% include 'post.html' %}
                 {% endfor %}

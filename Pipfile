@@ -11,6 +11,7 @@ gunicorn = "*"
 django-bootstrap4 = "*"
 djongo = "*"
 dnspython = "*"
+requests = "*"
 
 [dev-packages]
 
