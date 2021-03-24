@@ -11,6 +11,10 @@
     padding: 10px;
 }
 
+.post-header:hover {
+    background-color: #ece8e8;
+}
+
 .post-author-image {
     height: 100%;
 }
