@@ -13,7 +13,7 @@ from task.models import TaskTodo
 
 def home(request):
     username = request.session.get('username', None)
-    posts = Post.objects.all()
+    posts = Post.objects.all().reverse()
     alltasks = TaskTodo.objects.all()
     context = {
         'isLoggedin': True if username else False,
