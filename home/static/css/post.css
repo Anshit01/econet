@@ -4,7 +4,6 @@
     background-color: #fff;
     border-radius: 10px;
     margin: 20px 0;
-    /* padding-top: 20px; */
     padding-bottom: 20px;
 }
 
@@ -33,6 +32,7 @@
 
 .post-image {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .post-datetime {
@@ -40,8 +40,8 @@
 }
 
 .post-like{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     padding-left: 20px;
 }
 .post-likes-count{
