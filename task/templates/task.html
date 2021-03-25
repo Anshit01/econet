@@ -18,59 +18,75 @@
     </div>
 
     <div class="taskstype">Weekly</div>
-    <div class="tasksholder">
-        {% for task in weeklyTasks %}
-            <div class="taskholder">
-                <div class="taskinfoholder">
-                    <div class="taskinfo">
-                        <div class="taskname">
-                            {{task.name}}
-                        </div>
-                        <div class="taskworthpoint">
-                            {{task.worthPoints}}
-                        </div>
-                    </div>
-                </div>
-                <div class="taskpostsholder">
-                    {% for post in task.posts.all %}
-                        <div class="taskpostholder" post-id="{{post.id}}">
-                            <img class="postimage" src="{{post.imageURL}}"/>
-                            <div class="postcaption" likes="👍 {{post.likes}}" >
-                                {{post.caption}}
+    <div class="container">
+        <div class="row">
+            <div class="tasksholder">
+                {% for task in weeklyTasks %}
+                    <div class="taskholder">
+                        <div class="col-md-4">
+                            <div class="taskinfoholder">
+                                <div class="taskname">
+                                    {{task.name}}
+                                </div>
+                                <div class="taskworthpoint">
+                                    {{task.worthPoints}}
+                                </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="col-md-8">
+                            <div class="taskpostsholder">
+                                {% for post in task.posts.all %}
+                                    <div class="taskpostholder" post-id="{{post.id}}">
+                                        <img src="{{post.author.imageURL}}" class="post-image" />
+                                        <span class="post-user">{{post.author.username}}</span>
+                                        <img class="postimage" src="{{post.imageURL}}"/>
+                                        <div class="postcaption" likes="👍 {{post.likes}}" >
+                                            {{post.caption}}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
 
     <div class="taskstype">General</div>
-    <div class="tasksholder">
-        {% for task in generalTasks %}
-            <div class="taskholder">
-                <div class="taskinfoholder">
-                    <div class="taskinfo">
-                        <div class="taskname">
-                            {{task.name}}
-                        </div>
-                        <div class="taskworthpoint">
-                            {{task.worthPoints}}
-                        </div>
-                    </div>
-                </div>
-                <div class="taskpostsholder">
-                    {% for post in task.posts.all %}
-                        <div class="taskpostholder">
-                            <img class="postimage" src="{{post.imageURL}}"/>
-                            <div class="postcaption" likes="👍 {{post.likes}}" >
-                                {{post.caption}}
+    <div class="container">
+        <div class="row">
+            <div class="tasksholder">
+                {% for task in generalTasks %}
+                    <div class="taskholder mx-auto">
+                        <div class="col-md-4">
+                            <div class="taskinfoholder">
+                                <div class="taskname">
+                                    {{task.name}}
+                                </div>
+                                <div class="taskworthpoint">
+                                    {{task.worthPoints}}
+                                </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="col-md-8">
+                            <div class="taskpostsholder">
+                                {% for post in task.posts.all %}
+                                    <div class="taskpostholder">
+                                        <img src="{{post.author.imageURL}}" class="post-image" />
+                                        <span class="post-user">{{post.author.username}}</span>
+                                        <img class="postimage" src="{{post.imageURL}}"/>
+                                        <div class="postcaption" likes="👍 {{post.likes}}" >
+                                            {{post.caption}}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
     <script></script>
 {% endblock %}

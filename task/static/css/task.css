@@ -1,49 +1,31 @@
-
+.tasksholder{
+    padding-left: auto;
+    padding-right: auto;
+}
 .taskstype{
     width: max-content;
-    margin: 0 auto;
+    margin: 20px auto;
     font-size: 30px;
     font-weight: bold;
-}
-
-.tasksholder{
-    margin: 10px auto;
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 80%;
-    padding: 1%;
-}
-
-.taskholder{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px 0;
+    text-transform: uppercase;
 }
 
 .taskinfoholder{
-    padding: 20px;
-    flex: 1 1 25%;
-    min-width: 200px;
+    margin-right: 50px;
+    z-index: 1;
+    background: #EBEBEB;
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-box-shadow: 3px 3px 3px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 3px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 3px 5px #ccc;
+    transition: 0.2s;
 }
 
-.taskpostsholder{
-    padding:  10px 1%;
-    flex: 1 1 75%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-}
-
-.taskinfo{
-    position: relative;
-    /* border-radius: 5px; */
-    width: max-content;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-color: red; */
-    /* padding: 40%; */
-    /* box-shadow: 2px 2px 5px 5px; */
+.post-user{
+    font-size: 20px;
+    color: rgb(0, 10, 4);
+    font-weight: 600;
 }
 
 .taskname{
@@ -57,21 +39,6 @@
     text-align: center;
 }   
 
-.taskpostholder{
-    display: inline-flex;
-    flex-flow: column;
-    width: 250px;
-    margin: 0 15px;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 5px;
-}
-
-.postimage{
-    width: 100%;
-}
-
 .postcaption{
     white-space: normal;
     margin: 0 auto;
@@ -80,13 +47,57 @@
     text-align: center;
     padding: 5px;
 }
+ 
+.taskholder{
+    display: flex;
+    place-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+  
+  .taskpostsholder{
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 30px ;
+  }
+  
+  .taskpostholder{
+    width: 300px;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-box-shadow: 3px 3px 3px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 3px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 3px 5px #ccc;
+    transition: 0.2s;
+  }
+  
+  .postimage{
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  .taskpostholder:not(:first-child) {
+    margin-left: calc(4rem*-1);
+  }
+  
+  .taskpostholder:hover,
+  .taskpostholder:focus-within {
+    transform: translatey(-1rem);
+  }
+  
+  .taskpostholder:hover ~ .taskpostholder,
+  .taskpostholder:focus-within ~ .taskpostholder{
+    transform: translatex(4rem);
+  }
 
-/* .postcaption::before{
-    content: attr(likes);
-    position: relative;
-    height: max-content;
-    width: max-content;
-    top: -35px;
-    font-weight: bold;
-    text-shadow: 0 0 3px white;
-} */
+  .post-image{
+      width: 30px;
+      height: 30px;
+  }
+  
+  
