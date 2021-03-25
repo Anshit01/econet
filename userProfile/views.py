@@ -5,7 +5,7 @@ from account.models import User, Post
 # Create your views here. 
 def user(request, username):
     loggedinUsername = request.session.get('username', None)
-    posts = Post.objects.all().order_by('-id')
+    posts = Post.objects.filter(author=username).order_by('-id')
     users = User.objects.filter(username=username)
     if users.count():
         context = {
@@ -13,6 +13,7 @@ def user(request, username):
             'isLoggedin': True if loggedinUsername else False,
             'username': username,
             'posts': posts,
+            'tasksCompleted': users[0].tasksCompleted.all()
         }
         return render(request, 'profile.html', context)
     return redirect('/')

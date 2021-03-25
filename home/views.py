@@ -44,16 +44,19 @@ def newPost(request):
         print(data)
         linkedTask = None
         taskId = data['task']
+        author = User.objects.filter(username=username)[0]
         if taskId:
             linkedTasks = TaskTodo.objects.filter(id=data['task'])
             if linkedTasks.count():
                 linkedTask = linkedTasks[0]
-        author = User.objects.filter(username=username)[0]
+                points = linkedTask.worthPoints
+                author.points += points
+                author.tasksCompleted.add(linkedTask)
         newPost = Post(
             imageURL=data['imageURL'],
             author=author,
             caption=data['caption'],
-            linkedTask=linkedTask
+            linkedTask=linkedTask,
         )
         newPost.save()
         return HttpResponse(1)
