@@ -47,6 +47,8 @@
 }
 
 .taskname{
+    overflow-wrap: break-word;
+    white-space: normal;
     font-weight: bold;
     font-size: 25px;
     text-align: center;
