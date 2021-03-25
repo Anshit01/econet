@@ -1,11 +1,11 @@
 $(document).ready(function () {
-  $(".pic-div").hover(
+  $(".pic-div-editable").hover(
     function () {
       $(this).css({ cursor: "pointer" });
     },
   );
 
-  $(".pic-div").click(function () {
+  $(".pic-div-editable").click(function () {
     $("#change-dp-modal").modal("show");
   });
 

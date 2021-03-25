@@ -35,6 +35,7 @@ body {
     position: absolute;
     right: 30%;
     top: 42%;
+    /* margin-bottom: 20px; */
 }
 .div{
     position: absolute;
@@ -53,6 +54,7 @@ body {
 }
 .profile-name{
     font-size: 30px;
+    margin-top: 25px;
 }
 .user-bio{
     font-size: 14px;

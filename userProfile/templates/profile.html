@@ -52,18 +52,23 @@
       <div class="" id="user">
         
         <!-- Avatar -->
-        <div class="pic-div">
-          <img
-            src="{{user.imageURL}}"
-            alt=""
-            class="profile-pic"
-            id="profile-picture"
-          />
-            <div class="pencil-div">
-              <div class="div">
-                  <i class="fa fa-pencil fa-2x pencil" aria-hidden="true"></i>
+        <div class="pic-div
+            {% if isLoggedin and user.username == username %} 
+                pic-div-editable
+            {% endif %}">
+            <img
+                src="{{user.imageURL}}"
+                alt=""
+                class="profile-pic"
+                id="profile-picture"
+            />
+            {% if isLoggedin and user.username == username %} 
+                <div class="pencil-div">
+                    <div class="div">
+                        <i class="fa fa-pencil fa-2x pencil" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
         <div class="profile-details">
             <!-- User Name -->
@@ -76,7 +81,9 @@
                 <div class="user-bio">
                     {{user.bio}}
                 </div>
-                <button class="btn edit-bio">Edit Bio</button>
+                {% if isLoggedin and user.username == username %} 
+                    <button class="btn edit-bio">Edit Bio</button>
+                {% endif %}
               <div class="user-joined">
                 <i class="fa fa-calendar" aria-hidden="true"></i> Joined {{user.joinedOn|date}}
               </div>
