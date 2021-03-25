@@ -166,6 +166,11 @@ body {
   animation-delay: 0.75s;
 }
 
+#warning{
+  text-align: center;
+  color: red;
+}
+
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
