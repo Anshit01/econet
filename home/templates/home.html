@@ -99,9 +99,6 @@
                         <div class="weekly-task mt-4">
                             <div class="week-task-head">This week's task</div>
                             <div class="task-details">
-                                <p class="task-text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque non quisquam obcaecati maiores magnam temporibus 
-                                </p>
                                 {% for task in weeklyTasks %}
                                 <p class="task-text">{{task.name}} <span class="green">+{{task.worthPoints}}</span></p>
                                 {% endfor %}
@@ -112,13 +109,6 @@
                         <div class="weekly-task mt-4">
                             <div class="week-task-head">All Tasks</div>
                             <div class="task-details">
-                                <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                                <hr>
-                                <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                                <hr>
-                                <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                                <hr>
-                                <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                                 {% for task in generalTasks %}
                                 <p class="task-text">{{task.name}} <span class="green">+{{task.worthPoints}}</span></p>
                                 <hr>
