@@ -8,4 +8,4 @@ Checkout the submission on Devfolio: https://devfolio.co/submissions/econet-2b48
 
 This project is made in Django web framework.
 
-Tezos smart contract made using SmartPy. Find the smart contract in `contract.py`.
+Tezos smart contract made using SmartPy. Find the smart contract in `contract.py` and its usage in our DAPP using pytezos in `utils/utils.py`.
