@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "2.2.8"
 bootstrap4 = "*"
 whitenoise = "*"
 gunicorn = "*"
@@ -13,8 +12,9 @@ djongo = "*"
 dnspython = "*"
 requests = "*"
 pytezos = "2.5.15"
-pymongo = "*"
 djangotoolbox = "*"
+django = "*"
+pymongo = "*"
 
 [dev-packages]
 
