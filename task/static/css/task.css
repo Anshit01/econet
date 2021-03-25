@@ -6,12 +6,18 @@
     text-transform: uppercase;
 }
 
+.row {
+  width: 100%;
+}
+
 .taskinfoholder{
-    margin-right: 50px;
+    padding: 10px;
+    margin: 30px;
+    margin-bottom: 10px;
+    max-width: 600px;
     z-index: 1;
     background: #EBEBEB;
     border-radius: 1rem;
-    padding: 5px;
     -webkit-box-shadow: 3px 3px 3px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    3px 3px 3px 5px #ccc;  /* Firefox 3.5 - 3.6 */
     box-shadow:         3px 3px 3px 5px #ccc;
@@ -34,6 +40,7 @@
 .taskworthpoint{
     font-size: 20px;
     text-align: center;
+    color: rgb(25, 156, 25);
 }   
 
 .postcaption{
@@ -55,7 +62,7 @@
   .taskpostsholder{
     display: flex;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 10px;
     overflow-x: scroll;
     overflow-y: hidden;
     padding: 30px ;
@@ -92,9 +99,10 @@
     transform: translatex(4rem);
   }
 
-  .post-image{
+  .post-user-image{
       width: 30px;
       height: 30px;
+      border-radius: 50%;
   }
   
   
