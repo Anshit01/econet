@@ -39,12 +39,13 @@ body {
     font-size: 30px;
 }
 .user-bio{
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 .user-joined{
     text-align: center;
     font-size: 16px;
+    font-weight: 600;
 }
 #left {
   margin-top: -150px;
