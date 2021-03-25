@@ -7,11 +7,13 @@ from utils.utils import getUserPointsAndRank
 def user(request, username):
     loggedinUsername = request.session.get('username', None)
     posts = Post.objects.filter(author=username).order_by('-id')
-    users = User.objects.filter(username=username)
+    users = User.objects.filter(username=loggedinUsername)
+    profileUsers = User.objects.filter(username=username)
     points, rank = getUserPointsAndRank(username)
-    if users.count():
+    if users.count() and profileUsers.count():
         context = {
             'user': users[0],
+            'profileUser': profileUsers[0],
             'isLoggedin': True if loggedinUsername else False,
             'username': loggedinUsername,
             'posts': posts,

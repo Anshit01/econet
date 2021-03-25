@@ -53,16 +53,16 @@
         
         <!-- Avatar -->
         <div class="pic-div
-            {% if isLoggedin and user.username == username %} 
+            {% if isLoggedin and profileUser.username == username %} 
                 pic-div-editable
             {% endif %}">
             <img
-                src="{{user.imageURL}}"
+                src="{{profileUser.imageURL}}"
                 alt=""
                 class="profile-pic"
                 id="profile-picture"
             />
-            {% if isLoggedin and user.username == username %} 
+            {% if isLoggedin and profileUser.username == username %} 
                 <div class="pencil-div">
                     <div class="div">
                         <i class="fa fa-pencil fa-2x pencil" aria-hidden="true"></i>
@@ -72,20 +72,20 @@
         </div>
         <div class="profile-details">
             <!-- User Name -->
-          <h4 class="font-weight-bold profile-name">{{user.username}}</h4>
+          <h4 class="font-weight-bold profile-name">{{profileUser.username}}</h4>
           <div class="row">
             <div class="col">
                 <div class="user-badge">
-                    {{user.badge}}
+                    {{profileUser.badge}}
                 </div>
                 <div class="user-bio">
-                    {{user.bio}}
+                    {{profileUser.bio}}
                 </div>
-                {% if isLoggedin and user.username == username %} 
+                {% if isLoggedin and profileUser.username == username %} 
                     <button class="btn edit-bio">Edit Bio</button>
                 {% endif %}
               <div class="user-joined">
-                <i class="fa fa-calendar" aria-hidden="true"></i> Joined {{user.joinedOn|date}}
+                <i class="fa fa-calendar" aria-hidden="true"></i> Joined {{profileUser.joinedOn|date}}
               </div>
             </div>
           </div>

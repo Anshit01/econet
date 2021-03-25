@@ -16,11 +16,15 @@ def home(request):
     username = request.session.get('username', None)
     posts = Post.objects.all().order_by('-id')
     alltasks = TaskTodo.objects.all()
+    weeklyTasks = TaskTodo.objects.filter(taskType='W')
+    generalTasks = TaskTodo.objects.filter(taskType='G')
     context = {
         'isLoggedin': True if username else False,
         'username': username,
         'posts': posts,
-        'alltasks': alltasks
+        'alltasks': alltasks,
+        'weeklyTasks': weeklyTasks,
+        'generalTasks': generalTasks
 
     }
     users = User.objects.filter(username=username)

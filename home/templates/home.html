@@ -74,10 +74,10 @@
                     {% endif %}
                     <div class="trending-tags mt-4">
                         <p class="trending-tag-head">Trending Tags</p>
-                        <p class="tag"><strong>#</strong> Social Work</p>
-                        <p class="tag"><strong>#</strong> Book Donation</p>
+                        <p class="tag"><strong>#</strong> SocialWork</p>
                         <p class="tag"><strong>#</strong> Environment</p>
                         <p class="tag"><strong>#</strong> Reuse</p>
+                        <p class="tag"><strong>#</strong> BookDonation</p>
                     </div>
                 </div>
             </div>
@@ -102,6 +102,9 @@
                                 <p class="task-text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloremque non quisquam obcaecati maiores magnam temporibus 
                                 </p>
+                                {% for task in weeklyTasks %}
+                                <p class="task-text">{{task.name}} <span class="green">+{{task.worthPoints}}</span></p>
+                                {% endfor %}
                             </div>
                         </div>
                     </a>
@@ -116,6 +119,10 @@
                                 <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                                 <hr>
                                 <p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                                {% for task in generalTasks %}
+                                <p class="task-text">{{task.name}} <span class="green">+{{task.worthPoints}}</span></p>
+                                <hr>
+                                {% endfor %}
                             </div>
                         </div>
                     </a>

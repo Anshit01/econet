@@ -89,6 +89,10 @@
     color: #333333;
 }
 
+.green {
+    color: rgb(45, 144, 45);
+}
+
 .week-task-head{
     font-size: 18px;
     font-weight: 600;
