@@ -18,9 +18,8 @@ class User(models.Model):
     badge = models.CharField(max_length=100)
     points = models.IntegerField(default=0)
 
-    tasksCompleted = models.ArrayReferenceField(
+    tasksCompleted = models.ManyToManyField(
         to=TaskTodo,
-        on_delete=models.CASCADE,
         blank=True
     )
     

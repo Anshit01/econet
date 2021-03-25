@@ -42,9 +42,10 @@ def createUser(username):
     #     shell="https://edonet-tezos.giganode.io"
     # )
     # contract = pyt.contract(config["CONTRACT"])
-
-    contract.createUser(username).operation_group.sign().inject()
-
+    try:
+        contract.createUser(username).operation_group.sign().inject()
+    except:
+        print("error in creating user in blockchain. probably it already exists.")
 
 def hash(password):
     return sha256(password.encode()).hexdigest()
