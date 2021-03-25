@@ -13,6 +13,7 @@ djongo = "*"
 dnspython = "*"
 requests = "*"
 pytezos = "2.5.15"
+pymongo = "*"
 
 [dev-packages]
 

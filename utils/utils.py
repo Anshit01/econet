@@ -3,15 +3,15 @@ import uuid
 from pytezos import pytezos
 
 from econet.config import config
+pyt = pytezos.using(
+    key=config["TEZOS_PRIVATE_KEY"],
+    shell="https://edonet-tezos.giganode.io"
+)
+contract = pyt.contract(config["CONTRACT"])
 
 
 def getUserPointsAndRank(username):
-    pyt = pytezos.using(
-        key=config["TEZOS_PRIVATE_KEY"],
-        shell="https://edonet-tezos.giganode.io"
-    )
-    contract = pyt.contract(config["CONTRACT"])
-
+    
     users = contract.storage()
     points = -1
     if username in users:
@@ -25,11 +25,11 @@ def getUserPointsAndRank(username):
     return points, rank
 
 def updateUserPoints(username, points):
-    pyt = pytezos.using(
-        key=config["TEZOS_PRIVATE_KEY"],
-        shell="https://edonet-tezos.giganode.io"
-    )
-    contract = pyt.contract(config["CONTRACT"])
+    # pyt = pytezos.using(
+    #     key=config["TEZOS_PRIVATE_KEY"],
+    #     shell="https://edonet-tezos.giganode.io"
+    # )
+    # contract = pyt.contract(config["CONTRACT"])
 
     contract.updatePoints(
         username=username,
@@ -37,11 +37,11 @@ def updateUserPoints(username, points):
     ).operation_group.sign().inject()
 
 def createUser(username):
-    pyt = pytezos.using(
-        key=config["TEZOS_PRIVATE_KEY"],
-        shell="https://edonet-tezos.giganode.io"
-    )
-    contract = pyt.contract(config["CONTRACT"])
+    # pyt = pytezos.using(
+    #     key=config["TEZOS_PRIVATE_KEY"],
+    #     shell="https://edonet-tezos.giganode.io"
+    # )
+    # contract = pyt.contract(config["CONTRACT"])
 
     contract.createUser(username).operation_group.sign().inject()
 
