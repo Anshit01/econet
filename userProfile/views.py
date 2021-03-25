@@ -21,3 +21,33 @@ def user(request, username):
         }
         return render(request, 'profile.html', context)
     return redirect('/')
+
+def updateProfilePic(request, imageURL):
+    if request.method == "POST":
+        username = request.session.get('username', None)
+        print("Got a new post")
+        data = request.POST
+        print(data)
+        users = User.objects.filter(username=username)
+        if users.count():
+            user = users[0]
+            user.imageURL = imageURL
+            user.save()
+            return HttpResponse(1)
+        return HttpResponse(0)
+    return HttpResponseNotAllowed(['POST'])
+
+def updateBio(request, bio):
+    if request.method == "POST":
+        username = request.session.get('username', None)
+        print("Got a new post")
+        data = request.POST
+        print(data)
+        users = User.objects.filter(username=username)
+        if users.count():
+            user = users[0]
+            user.bio = bio
+            user.save()
+            return HttpResponse(1)
+        return HttpResponse(0)
+    return HttpResponseNotAllowed(['POST'])
