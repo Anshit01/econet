@@ -1,3 +1,5 @@
 config.py
 .vscode
 __pycache__
+faucet.json
+test.py

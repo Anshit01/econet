@@ -1,12 +1,13 @@
 import json
 
-import requests
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseNotAllowed
 
 from econet.config import config
 from account.models import User, Post
 from task.models import TaskTodo
+
+from utils.utils import updateUserPoints
 
 # Create your views here.
 
@@ -51,6 +52,7 @@ def newPost(request):
                 linkedTask = linkedTasks[0]
                 points = linkedTask.worthPoints
                 author.points += points
+                updateUserPoints(username, points)
                 author.tasksCompleted.add(linkedTask)
         newPost = Post(
             imageURL=data['imageURL'],
@@ -70,6 +72,7 @@ def likePost(request, id):
         post.likes += 1
         author = post.author
         author.points += 1
+        updateUserPoints(username, 1)
         author.save()
         post.save()
         return HttpResponse(1)

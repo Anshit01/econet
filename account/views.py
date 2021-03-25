@@ -3,7 +3,7 @@ import re
 
 from .models import User
 
-from utils.utils import hash
+from utils.utils import hash, createUser
 
 # Create your views here.
 def register(request):
@@ -33,6 +33,7 @@ def register(request):
             badge='Eco Newbie'
         )
         newUser.save()
+        createUser(username)
         request.session['username'] = username
         return redirect('/')
 
