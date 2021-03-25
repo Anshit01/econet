@@ -43,3 +43,7 @@ a:hover {
     color: #333333;
 }
   
+.navbar-toggler:focus, .navbar-toggler:active:focus, .navbar-toggler.active:focus{
+    outline:none;
+    box-shadow:none;
+}

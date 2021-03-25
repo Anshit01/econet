@@ -200,6 +200,7 @@ label{
     margin-bottom: 20px;
 }
 
+
 @media only screen and (max-width: 600px) {
     .hero-text {
         position: absolute;
@@ -208,16 +209,19 @@ label{
         transform: translate(-10%, -50%);
     }
     .welcome-head{
-        font-size: 39px;
+        font-size: 33px;
         margin-bottom: 20px;
     }
     .welcome-text{
-        font-size: 16px;
+        font-size: 14px;
         color: #fdf0e8;
-        font-weight: 400;
+        font-weight: 300;
     }
     .btn-explore{
         font-size: 18px;
         padding: 10px 25px;
+    }
+    .leaf-icon{
+        width: 20px;
     }
 }
