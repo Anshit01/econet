@@ -10,17 +10,18 @@ def user(request, username):
     users = User.objects.filter(username=loggedinUsername)
     profileUsers = User.objects.filter(username=username)
     points, rank = getUserPointsAndRank(username)
-    if users.count() and profileUsers.count():
+    if profileUsers.count():
         context = {
-            'user': users[0],
             'profileUser': profileUsers[0],
             'isLoggedin': True if loggedinUsername else False,
             'username': loggedinUsername,
             'posts': posts,
-            'tasksCompleted': users[0].tasksCompleted.all(),
+            'tasksCompleted': profileUsers[0].tasksCompleted.all(),
             'points': points,
             'rank': rank
         }
+        if users.count():
+            context['user'] = users[0]
         return render(request, 'profile.html', context)
     return redirect('/')
 
