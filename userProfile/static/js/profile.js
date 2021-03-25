@@ -1,14 +1,11 @@
 $(document).ready(function () {
-  $("#profile-picture").hover(
+  $(".pic-div").hover(
     function () {
-      $(this).css({ border: "2px solid grey" });
+      $(this).css({ cursor: "pointer" });
     },
-    function () {
-      $(this).css({ border: "2px solid transparent" });
-    }
   );
 
-  $("#profile-picture").click(function () {
+  $(".pic-div").click(function () {
     $("#change-dp-modal").modal("show");
   });
 
@@ -67,16 +64,7 @@ $(document).ready(function () {
     }
   });
 
-  $(".user-bio").hover(
-    function () {
-      $(this).css({ border: "2px solid grey" });
-    },
-    function () {
-      $(this).css({ border: "2px solid transparent" });
-    }
-  );
-
-  $(".user-bio").click(function () {
+  $(".edit-bio").click(function () {
     $("#change-bio-modal").modal("show");
   });
 
