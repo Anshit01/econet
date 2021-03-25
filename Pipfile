@@ -8,13 +8,13 @@ bootstrap4 = "*"
 whitenoise = "*"
 gunicorn = "*"
 django-bootstrap4 = "*"
-djongo = "*"
 dnspython = "*"
 requests = "*"
 pytezos = "2.5.15"
-djangotoolbox = "*"
 django = "*"
 pymongo = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

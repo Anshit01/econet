@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import djongo
+import dj_database_url
 from .config import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -93,14 +93,18 @@ WSGI_APPLICATION = 'econet.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'database',
+#         'CLIENT': {
+#             'host': config['DATABASE_URL'],
+#         }
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'database',
-        'CLIENT': {
-            'host': config['DATABASE_URL'],
-        }
-    }
+    'default': dj_database_url.config(default=config['DB_NEW'], conn_max_age=600, ssl_require=True)
 }
 
 # Password validation
