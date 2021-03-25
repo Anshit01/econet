@@ -40,20 +40,23 @@ def newPost(request):
     if request.method == "POST":
         username = request.session.get('username', None)
         print("Got a new post")
-        data = dict(request.POST)
+        data = request.POST
         print(data)
         linkedTask = None
-        taskId = data['task'][0]
+        taskId = data['task']
+        author = User.objects.filter(username=username)[0]
         if taskId:
-            linkedTasks = TaskTodo.objects.filter(id=data['task'][0])
+            linkedTasks = TaskTodo.objects.filter(id=data['task'])
             if linkedTasks.count():
                 linkedTask = linkedTasks[0]
-        author = User.objects.filter(username=username)[0]
+                points = linkedTask.worthPoints
+                author.points += points
+                author.tasksCompleted.add(linkedTask)
         newPost = Post(
-            imageURL=data['imageURL'][0],
+            imageURL=data['imageURL'],
             author=author,
-            caption=data['caption'][0],
-            linkedTask=linkedTask
+            caption=data['caption'],
+            linkedTask=linkedTask,
         )
         newPost.save()
         return HttpResponse(1)

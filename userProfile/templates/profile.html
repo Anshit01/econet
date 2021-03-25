@@ -5,9 +5,46 @@
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <link rel="stylesheet" href="{% static 'css/post.css' %}">
     <script src="{% static 'js/post.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
     {% endblock %}
 
 {% block body_block %}
+
+<div id="change-dp-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" style="padding: 10px;">
+      <span class="modal-header">
+          <h3 class="create-post-head">Change DP</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </span>
+      <div class="modal-profile">
+        <img id="change-profile-image" style="width: 80%;" />
+        <input id="change-profile-image-file" accept="image/gif, image/jpeg, image/png" type="file" />
+        <button id="change-profile-image-button" class="btn btn-success">Change</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="change-bio-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" style="padding: 10px;">
+      <span class="modal-header">
+          <h3 class="create-post-head">Change Bio</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </span>
+      <div class="modal-profile">
+        <input id="change-bio-text" placeholder="A New Bio" />  
+        <button id="change-bio-button" class="btn btn-success">Change</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="cover"></div>
 <div class="container">
   <div class="row justify-content-center">
@@ -20,6 +57,7 @@
             src="{{user.imageURL}}"
             alt=""
             class="profile-pic"
+            id="profile-picture"
           />
         </div>
         <div class="profile-details">
@@ -59,7 +97,7 @@
           <p>Rank</p>
         </div>
         <div class="social-description" id="tasks">
-          <h2>{{user.tasksCompleted|length}}</h2>
+          <h2>{{tasksCompleted|length}}</h2>
           <p>Tasks Completed</p>
         </div>
       </div>    
