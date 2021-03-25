@@ -20,7 +20,7 @@
           </button>
       </span>
       <div class="modal-profile">
-        <img id="change-profile-image" style="width: 80%;" />
+        <img id="change-profile-image" style="width: 100%;" />
         <input id="change-profile-image-file" accept="image/gif, image/jpeg, image/png" type="file" />
         <button id="change-profile-image-button" class="btn btn-success">Change</button>
       </div>
@@ -38,7 +38,7 @@
           </button>
       </span>
       <div class="modal-profile">
-        <input id="change-bio-text" placeholder="A New Bio" />  
+        <textarea id="change-bio-text" placeholder="A New Bio"></textarea>  <br>
         <button id="change-bio-button" class="btn btn-success">Change</button>
       </div>
     </div>
@@ -52,13 +52,23 @@
       <div class="" id="user">
         
         <!-- Avatar -->
-        <div class="pic-div">
-          <img
-            src="{{user.imageURL}}"
-            alt=""
-            class="profile-pic"
-            id="profile-picture"
-          />
+        <div class="pic-div
+            {% if isLoggedin and user.username == username %} 
+                pic-div-editable
+            {% endif %}">
+            <img
+                src="{{user.imageURL}}"
+                alt=""
+                class="profile-pic"
+                id="profile-picture"
+            />
+            {% if isLoggedin and user.username == username %} 
+                <div class="pencil-div">
+                    <div class="div">
+                        <i class="fa fa-pencil fa-2x pencil" aria-hidden="true"></i>
+                    </div>
+                </div>
+            {% endif %}
         </div>
         <div class="profile-details">
             <!-- User Name -->
@@ -71,6 +81,9 @@
                 <div class="user-bio">
                     {{user.bio}}
                 </div>
+                {% if isLoggedin and user.username == username %} 
+                    <button class="btn edit-bio">Edit Bio</button>
+                {% endif %}
               <div class="user-joined">
                 <i class="fa fa-calendar" aria-hidden="true"></i> Joined {{user.joinedOn|date}}
               </div>

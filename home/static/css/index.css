@@ -66,7 +66,10 @@
     border-radius: 30px;
 }
 .create-profile-pic{
-    width: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
 }
 
 .sec-3{
@@ -124,6 +127,7 @@
     position: absolute;
     top: 30px;
     transform: translateX(-50%);
+    border-radius: 50%;
 }
 .pic-div{
     background-image: linear-gradient(

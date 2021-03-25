@@ -13,7 +13,7 @@ def user(request, username):
         context = {
             'user': users[0],
             'isLoggedin': True if loggedinUsername else False,
-            'username': username,
+            'username': loggedinUsername,
             'posts': posts,
             'tasksCompleted': users[0].tasksCompleted.all(),
             'points': points,
