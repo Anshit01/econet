@@ -14,6 +14,7 @@ dnspython = "*"
 requests = "*"
 pytezos = "2.5.15"
 pymongo = "*"
+djangotoolbox = "*"
 
 [dev-packages]
 
