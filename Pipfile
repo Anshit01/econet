@@ -12,6 +12,7 @@ django-bootstrap4 = "*"
 djongo = "*"
 dnspython = "*"
 requests = "*"
+pytezos = "2.5.15"
 
 [dev-packages]
 
