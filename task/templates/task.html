@@ -20,9 +20,9 @@
     <div class="taskstype">Weekly</div>
     <div class="container">
         <div class="row">
-            <div class="tasksholder">
+            <!-- <div class="tasksholder"> -->
                 {% for task in weeklyTasks %}
-                    <div class="taskholder">
+                    <div class="taskholder" style="width: 100%;">
                         <div class="col-md-4">
                             <div class="taskinfoholder">
                                 <div class="taskname">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 
@@ -58,11 +58,11 @@
         <div class="row">
             <div class="tasksholder">
                 {% for task in generalTasks %}
-                    <div class="taskholder mx-auto">
+                    <div class="taskholder" style="width: 100%;">
                         <div class="col-md-4">
                             <div class="taskinfoholder">
                                 <div class="taskname">
-                                    {{task.name}}
+                                    <p>{{task.name}}</p>
                                 </div>
                                 <div class="taskworthpoint">
                                     {{task.worthPoints}}
