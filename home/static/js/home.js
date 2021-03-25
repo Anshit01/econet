@@ -81,6 +81,8 @@ $( document ).ready(function() {
         )
         $.post('/new', data, (response) => {
             location.reload()
+            window.location.href = window.location.href
+            history.go(0)
         })
     })
 

@@ -32,7 +32,7 @@
                 
                     {% if isLoggedin %}
                     <li class="nav-item "></li>
-                        <a class="nav-link  mx-auto" href="/profile/{{username}}" style="color: #333333;"><img src="{{user.imageURL}}" class="dp-img" />{{user.username}}</a>
+                        <a class="nav-link  mx-auto" href="/profile/{{username}}" style="color: #333333;"><img src="{{user.imageURL}}" class="dp-img" /> {{user.username}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link join-btn mx-auto" href="/auth/logout" style="color: #333333;">Log out</a>
