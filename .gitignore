@@ -4,3 +4,4 @@ __pycache__
 faucet.json
 test.py
 *.ipynb
+pytezos-test-backend
